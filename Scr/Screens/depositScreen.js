@@ -10,11 +10,6 @@ import firestore from '@react-native-firebase/firestore';
 import { Pressable } from 'react-native';
 
 
-const onPressFunction = () => {
-    console.log("nhdfj");
-}
-
-
 
 
 
@@ -31,7 +26,6 @@ export default function DepositScreen() {
                 start={{ x: 0, y: 0.5 }}
                 end={{ x: 1, y: 0.5 }}
                 style={styles.gradient}>
-
 
             </LinearGradient>
 
@@ -56,7 +50,7 @@ export default function DepositScreen() {
 
                     />
                     <Button
-                        title="Login"
+                        title="Continuar"
                         onPress={Button}
                     />
                 </View>
@@ -74,26 +68,22 @@ export default function DepositScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-
+        flex: 1,        
+        justifyContent: 'flex-end',
     },
 
     contentContainer: {
         width: '100%',
-        height: 530,
+        height: '70%',
         position: 'absolute',
-        bottom: 0,
+        alignSelf:'f',
         backgroundColor: '#F9F9F9',
+       alignSelf:'baseline'
 
     },
     gradient: {
         width: '100%',
         height: '100%',
-        alignItems: 'center',
-
-
     },
     headerText: {
         fontSize: 20,

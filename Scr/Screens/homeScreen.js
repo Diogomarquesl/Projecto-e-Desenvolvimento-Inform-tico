@@ -23,7 +23,7 @@ export default function HomeScreen({ navigation }) {
 
 
                 <View style={styles.contentContainer}>
-                    <TouchableOpacity onPress={() => onPressFunction("porto")} style={[styles.pressable, styles.pressableTop]}>
+                    <TouchableOpacity onPress={() => onPressFunction("porto")} style={[styles.pressable, styles.pressableTop]} accessible={true} accessibilityRole="button" accessibilityLabel="Selecionar a cidade Porto">
                         <Image
                             source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/Porto.jpg?alt=media&token=f3ad7b19-980f-427d-9414-ec23c946c401' }}
                             style={[styles.backgroundImage, styles.backgroundImageTop]}
@@ -31,7 +31,7 @@ export default function HomeScreen({ navigation }) {
                         <Text style={styles.cidades}>Porto</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => onPressFunction("coimbra")} style={styles.pressable}>
+                    <TouchableOpacity onPress={() => onPressFunction("coimbra")} style={styles.pressable} accessibilityRole="button" accessibilityLabel="Selecionar a cidade Coimbra">
                         <Image
                             source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/coimbraNoite.jpg?alt=media&token=12516152-9a4d-4765-9695-4556674650fe' }}
                             style={styles.backgroundImage}
@@ -39,7 +39,7 @@ export default function HomeScreen({ navigation }) {
                         <Text style={styles.cidades}>Coimbra</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => onPressFunction("lisboa")} style={styles.pressable}>
+                    <TouchableOpacity onPress={() => onPressFunction("lisboa")} style={styles.pressable} accessibilityRole="button" accessibilityLabel="Selecionar a cidade Lisboa">
                         <Image
                             source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/Lisboa.jpg?alt=media&token=f80f4426-5fe3-4c07-9994-cfaf3379fe9a' }}
                             style={styles.backgroundImage}
@@ -57,7 +57,8 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        flex: 1
+        flex: 1,
+        
     },
     container: {
         height: "100%",

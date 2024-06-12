@@ -9,11 +9,7 @@ import { buttonOutline, buttonPrimary, variants } from "./variants";
 
 
 
-export function Button({
-    title,
-    onPress,
-    variant = "primary",
-}) {
+export function Button({title,onPress,variant = "primary"}) {
     const buttonVariant = variants[variant];
     const buttonStyle = buttonPrimary.enabled;
     return (

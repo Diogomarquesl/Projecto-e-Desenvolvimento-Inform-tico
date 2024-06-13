@@ -160,17 +160,17 @@ export default function DiscoScreen({ navigation, route }) {
 
                                 <View style={styles.optionsContainer}>
 
-                                    <TouchableOpacity onPress={() => shop(disco[0].nome_discoteca, disco[0].img_Logo)} style={styles.options} accessible={true} accessibilityRole="button" accessibilityLabel='Redireciona para a loja da discoteca/bar'>
+                                    <TouchableOpacity onPress={() => shop(disco[0].nome_discoteca, disco[0].img_Logo)} style={styles.options} accessible={true} accessibilityRole="imagebutton" accessibilityLabel='Redireciona para a loja da discoteca/bar'>
                                         <Image style={styles.icons} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/icon_carrinhoCompras.png?alt=media&token=4736be95-d8df-49c4-9306-7351bf0a5172' }} />
 
                                     </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={() => ticketline(disco[0].nome_discoteca)} style={styles.options} accessible={true} accessibilityRole="button" accessibilityLabel='Redireciona para a bilheteira da discoteca/bar'>
+                                    <TouchableOpacity onPress={() => ticketline(disco[0].nome_discoteca)} style={styles.options} accessible={true} accessibilityRole="imagebutton" accessibilityLabel='Redireciona para a bilheteira da discoteca/bar'>
                                         <Image style={styles.icons} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/ticketIcon.png?alt=media&token=d5038a13-0722-46de-b854-990dd99c08d1' }} />
 
                                     </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={() => { setPointsModalVisible(true) }} style={styles.options} accessible={true} accessibilityRole="button" accessibilityLabel='Abre o sistema de pontos'>
+                                    <TouchableOpacity onPress={() => { setPointsModalVisible(true) }} style={styles.options} accessible={true} accessibilityRole="imagebutton" accessibilityLabel='Abre o sistema de pontos'>
 
                                         <Image style={styles.icons} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/points.png?alt=media&token=f93dc0dc-544d-45fe-a438-a51296aad3a8' }} />
                                     </TouchableOpacity>
@@ -183,12 +183,12 @@ export default function DiscoScreen({ navigation, route }) {
                                     >
                                         <View style={styles.modalOverlay}>
                                             <View style={styles.modalContainer}>
-                                                <TouchableOpacity onPress={() => setPointsModalVisible(false)} style={styles.closeButton}>
+                                                <TouchableOpacity onPress={() => setPointsModalVisible(false)} style={styles.closeButton} accessible={true} accessibilityRole="button" accessibilityLabel='Fecha a aba do sistema de pontos'>
                                                     <Text style={styles.closeButtonText}>X</Text>
                                                 </TouchableOpacity>
                                                 <Text style={styles.modalTitle}>Pontos</Text>
 
-                                                <Button onPress={addPoints} title='Ganhar pontos'>
+                                                <Button onPress={addPoints} title='Ganhar pontos' accessible={true} accessibilityRole="button" accessibilityLabel='Botao de ganhar pontos'>
                                                 </Button>
                                             </View>
                                         </View>
@@ -247,13 +247,13 @@ export default function DiscoScreen({ navigation, route }) {
                                             title={disco[0].nome_discoteca}
 
                                         />
-                                    </MapView>
+                                    </MapView> 
                                 </View>
 
 
                                 <View style={{ marginTop: 35 }}>
                                     <Text style={{ fontSize: 20, marginLeft: 25, fontWeight: 700 }}>Lotação esperada</Text>
-                                    <TouchableOpacity style={styles.dateSelector} onPress={() => setDateModalVisible(true)}>
+                                    <TouchableOpacity style={styles.dateSelector} onPress={() => setDateModalVisible(true)} accessible={true} accessibilityRole="list" accessibilityLabel='Abre a lista de datas para ver a percentagem de Lotação'>
                                         <Text>{selectedDate ? selectedDate : "Selecione uma Data"}</Text>
                                     </TouchableOpacity>
                                 </View>
@@ -287,7 +287,7 @@ export default function DiscoScreen({ navigation, route }) {
                                                 </TouchableOpacity>
                                             ))}
                                         </ScrollView>
-                                        <Button title="Fechar" onPress={() => setDateModalVisible(false)} />
+                                        <Button title="Fechar" onPress={() => setDateModalVisible(false)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao de fechar a lista de datas'/>
                                     </View>
                                 </View>
                             </Modal>

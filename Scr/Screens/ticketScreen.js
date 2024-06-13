@@ -196,10 +196,10 @@ export default function TicketScreen({ navigation, route }) {
             {disco.length > 0 && (
                 <View style={styles.contentContainer}>
                     <ReturnButton />
-                    <Image style={styles.logo} source={{ uri: disco[0].img_Logo }} />
+                    <Image style={styles.logo} source={{ uri: disco[0].img_Logo }} accessible={true} accessibilityRole="image" accessibilityLabel='Imagem logo discoteca'/>
                     <Text style={{ marginTop: 80, marginLeft: 30, fontSize: 26, fontWeight: '900' }}>Reservar Pulseira</Text>
 
-                    <TouchableOpacity style={styles.dateSelector} onPress={() => setDateModalVisible(true)}>
+                    <TouchableOpacity style={styles.dateSelector} onPress={() => setDateModalVisible(true)} accessible={true} accessibilityRole="list" accessibilityLabel='Abre a lista de datas disponíveis para comprar pulseira'>
                         <Text>{selectedDate ? selectedDate : "Selecione uma Data"}</Text>
                     </TouchableOpacity>
                     <Modal
@@ -225,12 +225,12 @@ export default function TicketScreen({ navigation, route }) {
                                         </TouchableOpacity>
                                     ))}
                                 </ScrollView>
-                                <Button title="Fechar" onPress={() => setDateModalVisible(false)} />
+                                <Button title="Fechar" onPress={() => setDateModalVisible(false)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao de fechar a lista de datas'/>
                             </View>
                         </View>
                     </Modal>
-
-                    <TouchableOpacity style={styles.tickets} onPress={() => handlePress(normalInputRef)}>
+                    
+                    <TouchableOpacity style={styles.tickets} onPress={() => handlePress(normalInputRef)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para introduzir numeors de pulseiras normal'>
                         <View>
                             <Text style={styles.ticketsTitle}>Pulseira Normal</Text>
                             {filteredPulseiras.length > 0 ? (
@@ -249,7 +249,7 @@ export default function TicketScreen({ navigation, route }) {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.tickets} onPress={() => handlePress(vipInputRef)}>
+                    <TouchableOpacity style={styles.tickets} onPress={() => handlePress(vipInputRef)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para introduzir numeors de pulseiras vip'>
                         <View>
                             <Text style={styles.ticketsTitle}>Pulseira VIP</Text>
                             {filteredPulseiras.length > 0 ? (
@@ -269,7 +269,7 @@ export default function TicketScreen({ navigation, route }) {
                     </TouchableOpacity>
 
                     <View style={{ position: 'absolute', bottom: 15, width: '100%', alignItems: 'center' }}>
-                        <Button title="Continuar" onPress={handleCheckout} />
+                        <Button title="Continuar" onPress={handleCheckout} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para continuar a compras '/>
                     </View>
 
                     <Modal
@@ -280,7 +280,7 @@ export default function TicketScreen({ navigation, route }) {
                     >
                         <View style={styles.modalOverlay}>
                             <View style={styles.modalContainer}>
-                                <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                                <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton} accessible={true} accessibilityRole="button" accessibilityLabel='Botao fechar carrinho de compras'>
                                     <Text style={styles.closeButtonText}>X</Text>
                                 </TouchableOpacity>
 
@@ -298,7 +298,7 @@ export default function TicketScreen({ navigation, route }) {
                                 <Text style={styles.modalItem}>Normal:{quantities.normal} </Text>
                                 <Text style={styles.modalItem}>VIP: {quantities.vip}</Text>
                                 <Text style={styles.modalTotal}>Preço Total: {totalPrice.toFixed(2)} €</Text>
-                                <Button title='Comprar' onPress={handlePurchase} />
+                                <Button title='Comprar' onPress={handlePurchase} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para confirmar a compra' />
                             </View>
                         </View>
                     </Modal>

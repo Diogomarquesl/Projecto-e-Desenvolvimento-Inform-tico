@@ -132,12 +132,13 @@ export default function SignUpScreen({ navigate }) {
                 {loading ? (
                     <ActivityIndicator size="large" color="#0000ff" />
                 ) : (
-                    <Button title="Registar" onPress={handleSubmit(handleSignup)} />
+                    <Button title="Registar" onPress={handleSubmit(handleSignup)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para registar' />
                 )}
                 <SecondaryButton
                     title="Já tem conta?"
                     variant="v1"
                     onPress={() => navigation.navigate('LogInScreen')}
+                    accessible={true} accessibilityRole="button" accessibilityLabel='Botao para ir para a tela de login'
                 />
             </View>
         </View>

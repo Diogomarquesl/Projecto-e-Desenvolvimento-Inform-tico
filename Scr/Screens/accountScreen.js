@@ -198,7 +198,7 @@ export default function AccountScreen({ navigation, route }) {
 
                     <Text style={styles.userName}>{userInfo[0].userName}</Text>
 
-                    <TouchableOpacity style={{ ...styles.options, marginTop: 20 }} onPress={() => setAccountModalVisible(true)}>
+                    <TouchableOpacity style={{ ...styles.options, marginTop: 20 }} onPress={() => setAccountModalVisible(true)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para abrir aba de dados pessoais'>
                         <Icon name="user" size={30} color="#000" />
                         <Text style={styles.title}>Dados Pessoais</Text>
                     </TouchableOpacity>
@@ -227,10 +227,7 @@ export default function AccountScreen({ navigation, route }) {
                         </View>
                     </Modal>
 
-                    <TouchableOpacity style={styles.options} onPress={() => {
-                        setTicketsModalVisible(true);
-                        getTicketPurchases();
-                    }}>
+                    <TouchableOpacity style={styles.options} onPress={() => {setTicketsModalVisible(true);getTicketPurchases()}} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para abrir aba de bilhetes'>
                         <Icon name="ticket" size={30} color="#000" />
                         <Text style={styles.title}>Bilhetes</Text>
                     </TouchableOpacity>
@@ -242,7 +239,7 @@ export default function AccountScreen({ navigation, route }) {
                     >
                         <View style={styles.modalOverlay}>
                             <View style={styles.modalContainer}>
-                                <TouchableOpacity onPress={() => setTicketsModalVisible(false)} style={styles.closeButton}>
+                                <TouchableOpacity onPress={() => setTicketsModalVisible(false)} style={styles.closeButton} >
                                     <Text style={styles.closeButtonText}>X</Text>
                                 </TouchableOpacity>
                                 <Text style={styles.modalTitle}>Bilhetes adquiridos</Text>
@@ -275,7 +272,7 @@ export default function AccountScreen({ navigation, route }) {
                     <TouchableOpacity style={styles.options} onPress={() => {
                         setShoppingModalVisible(true);
                         getUserPurchases();
-                    }}>
+                    }} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para abrir aba de compras'>
                         <Icon name="shopping-cart" size={30} color="#000" />
                         <Text style={styles.title}>Compras</Text>
                     </TouchableOpacity>
@@ -317,7 +314,7 @@ export default function AccountScreen({ navigation, route }) {
                         </View>
                     </Modal>
 
-                    <TouchableOpacity style={styles.options} onPress={() => setPointsModalVisible(true)}>
+                    <TouchableOpacity style={styles.options} onPress={() => setPointsModalVisible(true)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para abrir aba de pontos'>
                         <Icon name="trophy" size={30} color="#000" />
                         <Text style={styles.title}>Pontos</Text>
                     </TouchableOpacity>

@@ -128,7 +128,7 @@ export default function ShopScreen({ navigation, route }) {
             >
                 <View style={styles.modalOverlay}>
                     <View style={styles.modalContainer}>
-                        <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                        <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para fechar aba de saldo'>
                             <Text style={styles.closeButtonText}>X</Text>
                         </TouchableOpacity>
                         <View style={styles.headerModal}>
@@ -146,7 +146,7 @@ export default function ShopScreen({ navigation, route }) {
                         <Text style={styles.modalItem}>Shot: {quantities.shot}</Text>
                         <Text style={styles.modalItem}>Bebida Branca: {quantities.bebidaBranca}</Text>
                         <Text style={styles.modalTotal}>Preço Total: {totalPrice.toFixed(2)}€</Text>
-                        <Button title='Comprar' onPress={handlePurchase} />
+                        <Button title='Comprar' onPress={handlePurchase} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para confirmar conta'/>
                     </View>
                 </View>
             </Modal>
@@ -160,15 +160,15 @@ export default function ShopScreen({ navigation, route }) {
             </LinearGradient>
 
             <View style={styles.contentContainer}>
-                <ReturnButton />
+                <ReturnButton accessible={true} accessibilityRole="button" accessibilityLabel='Botao para ir para a tela anterior' />
                 {disco.length > 0 ? (
-                    <Image style={styles.logo} source={{ uri: disco[0].img_Logo }} />
+                    <Image style={styles.logo} source={{ uri: disco[0].img_Logo }} accessible={true} accessibilityRole="image" accessibilityLabel='imagem logotipo da discoteca' />
                 ) : (
                     <Text>Carregando...</Text>
                 )}
                 <Text style={{ marginTop: 80, marginLeft: 30, fontSize: 26, fontWeight: '900' }}>Compra aqui a tua bebida</Text>
 
-                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(finoInputRef)}>
+                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(finoInputRef)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para selecionar quatidade de finos'>
                     <Image style={styles.icon} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/finoIcon.png?alt=media&token=c1ecdf0a-8f00-4ae3-bad2-ef1a12c8e9a1' }} />
                     <View>
                         <Text style={{ width: 95 }}>Fino</Text>
@@ -188,7 +188,7 @@ export default function ShopScreen({ navigation, route }) {
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(shotInputRef)}>
+                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(shotInputRef)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para selecionar quantidade de shots'>
                     <Image style={styles.icon} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/shotIcon2.png?alt=media&token=d6850b3c-d187-42f0-bee5-89e8e4342a7f' }} />
                     <View>
                         <Text style={{ width: 95 }}>Shot</Text>
@@ -208,7 +208,7 @@ export default function ShopScreen({ navigation, route }) {
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(bebidaBrancaInputRef)}>
+                <TouchableOpacity style={styles.tickets} onPress={() => handlePress(bebidaBrancaInputRef)} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para selecionar quantidade de bebida branca'>
                     <Image style={styles.icon} source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/pdinon2.appspot.com/o/bebidaBrancaIcon.png?alt=media&token=7f6d5d5f-deb8-415f-9855-eab42148824f' }} />
                     <View>
                         <Text style={{ width: 95 }}>Bebida Branca</Text>
@@ -243,9 +243,9 @@ export default function ShopScreen({ navigation, route }) {
                     <View style={styles.modalOverlay}>
                         <View style={styles.modalContainer}>
                             <Text style={styles.modalTitle}>{message}</Text>
-                            <Button title="Ver Compras" onPress={() => navigation.navigate('AccountScreen')} />
+                            <Button title="Ver Compras" onPress={() => navigation.navigate('AccountScreen')} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para ir para a tela de conta'/>
                             {message === "Saldo insuficiente." && (
-                                <Button title="Adicionar Saldo" onPress={() => navigation.navigate('BalanceScreen')} />
+                                <Button title="Adicionar Saldo" onPress={() => navigation.navigate('BalanceScreen')} accessible={true} accessibilityRole="button" accessibilityLabel='Botao para ir paara a tela de adicionar saldo '/>
                             )}
                             
                             <Button title="Fechar" onPress={() => {setShowMessage(false); setModalVisible(false); }} />

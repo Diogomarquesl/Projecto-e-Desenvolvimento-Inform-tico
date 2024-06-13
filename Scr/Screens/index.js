@@ -1,5 +1,0 @@
-import BalanceScreen from '../Screens/balanceScreen'
-import HomeScreen from '../Screens/homeScreen'
-import LogInScreen from '../Screens/logInScreen'
-import SignUpScreen from './signUpScreen'
-import BalanceScreen from '../Screens/balanceScreen'
